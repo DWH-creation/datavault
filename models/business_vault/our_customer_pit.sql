@@ -11,7 +11,6 @@ with all_history (
     LEFT JOIN {{ref('sat_customer')}} sc ON sc.customer_pk = hc.customer_pk
     LEFT JOIN {{ref('sat_customer_crm')}} scc ON scc.customer_pk = hc.customer_pk
 )
-
 SELECT customer_pk, last_name, first_name, age, sc_effective_from, scc_effective_from
 from all_history
 where 1=1

@@ -3,14 +3,14 @@
 {%- set yaml_metadata -%}
 source_model: hub_customer
 src_pk: CUSTOMER_PK
-as_of_dates_table: AS_OF_DATE
+as_of_dates_table: as_of_date
 satellites:
-  SAT_CUSTOMER:
+  sat_customer:
     pk:
       PK: CUSTOMER_PK
     ldts:
       LDTS: LOAD_DATE
-  SAT_CUSTOMER_CRM:
+  sat_customer_crm:
     pk:
       PK: CUSTOMER_PK
     ldts:

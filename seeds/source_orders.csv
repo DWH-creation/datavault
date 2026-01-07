@@ -97,4 +97,5 @@ id,user_id,order_date,status
 96,90,2018-04-06,placed
 97,89,2018-04-07,placed
 98,41,2018-04-07,placed
-99,85,2018-04-09,placed
+100,105,2018-04-29,shipped
+100,105,2018-04-29, completed
