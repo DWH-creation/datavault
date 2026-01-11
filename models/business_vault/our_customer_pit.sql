@@ -1,4 +1,4 @@
-with all_history (
+with all_history as (
     select hc.customer_pk,
     sc.last_name,
     sc.first_name,

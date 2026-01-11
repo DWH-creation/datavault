@@ -15,9 +15,9 @@ satellites:
       PK: CUSTOMER_PK
     ldts:
       LDTS: LOAD_DATE
-stage_tables:
-  STG_CUSTOMERS: LOAD_DATE
-  STG_CUSTOMERS_CRM: LOAD_DATE
+stage_tables_ldts:
+  stg_customers: LOAD_DATE
+  stg_customers_crm: LOAD_DATE
 src_ldts: LOAD_DATE
 {%- endset -%}
 
