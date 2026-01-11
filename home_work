@@ -1,5 +1,5 @@
 Copy fork of project into my own repository:
- git@github.com:DWH-course-examples/dbt-datavault-postgres
+git@github.com:DWH-creation/dbt-datavault-postgres-06-09.git
 
 Make new local directory for the project:
   mkdir dbt_project
@@ -8,11 +8,11 @@ Enter project directory:
 Git initialisation:
   git init
 Clone remote repository:
-  git clone git@github.com:DWH-course-examples/dbt-datavault-postgres -b practice-06.09
+  git clone git@github.com:DWH-creation/dbt-datavault-postgres-06-09.git
 Check all remote repositories:
   git remote -v
-Enter directory datavailt:
-  cd datavault
+Enter directory dbt-datavault-postgres-06-09:
+  cd dbt-datavault-postgres-06-09
 Up container from the project docker-compose.yml:
   docker compose up
 Check all the containers:
@@ -22,8 +22,8 @@ Start containers if are not running:
   docker start <ID devcontainer>
 Check postgres and devcontainer containers are running:
   docker ps
-Check that dbt sees postrges. Enter command line of dev container:
-  docker exec -it <ID dev container> /bin/bash
+Check that dbt sees postrges. Enter command line of postgres container:
+  docker exec -it <ID postgres container> /bin/bash
 Install dbt-core and dbt-postgres packages:
   sudo apt install python3.10-venv
   cd .venv/bin
@@ -33,7 +33,7 @@ Install dbt-core and dbt-postgres packages:
   pip install dbt-core dbt-postgres
 If we need only upgrade dbt-core, dbt-postgres:
   pip install --upgrade dbt-postgres dbt-core
-Clean dependancies from workspace folder:
+Clean dependancies:
   dbt clean
 Disable check of certificates:
   git config --global http.ssIVerify false
@@ -45,8 +45,24 @@ Place data from source:
   dbt seed
 Run all transformations from sql models:
   dbt run
-
-
-
-
-
+Go to postgres-container terminal:
+  docker exec -it <container ID> /bin/bash
+Go to postgresql.conf:
+  /var/lib/postgresql/18/docker#
+Install nano:
+  apt-get update
+  apt-get install nano
+Open postgresql.conf
+  nano postgresql.conf
+  listen adresses = "*"
+  port = 5432
+  cntr + O //safe
+  cntr + x //exit 
+Open pg_hba.conf
+  nano pg_hba.conf
+  host all all 0.0.0.0/0 md5 //type this to the end of file
+  cntr + O //safe
+  cntr + x //exit  
+Restart postgres container:
+  cntr + p -> cntr + Q //exit and keep container running
+  docker restart <container ID>
